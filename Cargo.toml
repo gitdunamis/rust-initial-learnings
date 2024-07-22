@@ -3,6 +3,6 @@ version = "0.1.0"
 edition = "2021"
 
 [workspace]
-members = [ "conslist", "list",
+members = [ "conslist", "limittracker", "list",
     "pointers"
 ]
