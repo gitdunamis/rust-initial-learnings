@@ -1,14 +1,14 @@
-use std::{thread::{self, JoinHandle}, time::Duration, sync::{mpsc, Mutex, Arc}, cell::RefCell, rc::Rc};
+use std::{thread::{self, JoinHandle}, time::Duration, sync::{mpsc, Mutex, Arc}};
 
 fn main() {
     println!("Hello, world!");
     
     println!("Doing threads....");
-//    threads();
+    threads();
 
     //.........channels
     println!("\n Doing channels....");
-//    channels();
+    channels();
 
 
     println!("\n Doing mutexes");
