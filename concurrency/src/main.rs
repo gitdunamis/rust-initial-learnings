@@ -1,14 +1,34 @@
-use std::{thread::{self, JoinHandle}, time::Duration, sync::mpsc};
+use std::{thread::{self, JoinHandle}, time::Duration, sync::{mpsc, Mutex, Arc}, cell::RefCell, rc::Rc};
 
 fn main() {
     println!("Hello, world!");
     
     println!("Doing threads....");
-    threads();
+//    threads();
 
     //.........channels
     println!("\n Doing channels....");
-    channels();
+//    channels();
+
+
+    println!("\n Doing mutexes");
+let rc: Arc<Mutex<i32>> = Arc::new(Mutex::new(0));
+    let mut handles: Vec<JoinHandle<()>> = vec![];
+
+    for _ in 1..5 {
+        let counter = Arc::clone(&rc);
+        let handle: JoinHandle<()> = thread::spawn( move || {
+            let mut n = counter.lock().unwrap();
+            *n += 1;
+        });
+        handles.push(handle);
+    }
+
+    for handle in handles {
+        handle.join().unwrap();
+    }
+
+    println!("Results: {:?}", rc);
 
 
 }
