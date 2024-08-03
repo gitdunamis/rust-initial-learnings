@@ -24,3 +24,7 @@ dependencies = [
 [[package]]
 name = "pointers"
 version = "0.1.0"
+
+[[package]]
+name = "traitobjects"
+version = "0.1.0"

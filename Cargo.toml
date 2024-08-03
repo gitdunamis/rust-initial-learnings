@@ -5,4 +5,4 @@ edition = "2021"
 [workspace]
 members = [ "concurrency", "conslist", "limittracker", "list",
     "pointers"
-]
+, "traitobjects"]
