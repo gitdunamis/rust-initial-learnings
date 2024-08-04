@@ -28,3 +28,7 @@ version = "0.1.0"
 [[package]]
 name = "traitobjects"
 version = "0.1.0"
+
+[[package]]
+name = "unsafe_rust"
+version = "0.1.0"
