@@ -3,6 +3,6 @@ version = "0.1.0"
 edition = "2021"
 
 [workspace]
-members = [ "concurrency", "conslist", "limittracker", "list",
+members = [ "advancedtraits", "concurrency", "conslist", "limittracker", "list",
     "pointers"
 , "traitobjects", "unsafe_rust"]
