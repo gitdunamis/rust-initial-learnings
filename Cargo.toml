@@ -3,5 +3,17 @@ version = "0.1.0"
 edition = "2021"
 
 [workspace]
-members = [ "advancedtraits", "concurrency", "conslist", "limittracker", "list",
-    "pointers", "traitobjects", "unsafe_rust", "macros", "macros/hello_derive", "macros/hello_macro_user"]
+members = [
+    "advancedtraits",
+    "concurrency",
+    "conslist",
+    "limittracker",
+    "list",
+    "pointers",
+    "traitobjects",
+    "unsafe_rust",
+    "macros",
+    "macros/hello_derive",
+    "macros/hello_macro_user",
+    "webserver"
+]
