@@ -7,7 +7,7 @@ use syn;
 #[proc_macro_derive(Hello)]
 pub fn hello_derive(input: TokenStream) -> TokenStream {
     let ast = syn::parse(input).unwrap();
-    
+
     impl_hello_trait(&ast)
 }
 
@@ -20,6 +20,6 @@ fn impl_hello_trait(ast: &syn::DeriveInput) -> TokenStream {
             }
         }
     };
-    
+
     generated.into()
 }

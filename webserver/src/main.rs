@@ -1,15 +1,22 @@
-use std::io::{BufRead, BufReader, Read, Write};
+use std::io::{BufRead, BufReader, Write};
 use std::net::{TcpListener, TcpStream};
-use std::thread;
+use webserver::ThreadPool;
 
+// use crate::ThreadPool;
 fn main() {
     let server = TcpListener::bind("127.0.0.1:9090")
                             .expect("Ensure port 9090 is not in use");
 
-    for stream in server.incoming() {
-       let mut stream = stream.unwrap();
+    let mut pool: ThreadPool = ThreadPool::new(6);
 
-        thread::spawn(|| handle(&mut stream));
+    for stream in server.incoming().take(2) {
+        let mut stream = stream.unwrap();
+
+        println!("Started server on 127.0.0.1:9090");
+
+        pool.execute(|| handle(&mut stream));
+
+        println!("Server Exiting!!!");
     }
 
 }
